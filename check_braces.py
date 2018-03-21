@@ -3,7 +3,7 @@ An algorithm to check if the brackets/parentheses are in balance.
 
 '''
 
-def braces(expr):
+def check_braces(expr):
     if len(expr)%2!=0:
         return "NO"
     opening=set('([{')
