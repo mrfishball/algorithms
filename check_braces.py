@@ -1,3 +1,8 @@
+'''
+An algorithm to check if the brackets/parentheses are in balance.
+
+'''
+
 def braces(expr):
     if len(expr)%2!=0:
         return "NO"
@@ -16,7 +21,7 @@ def braces(expr):
     return "YES"
 
 
-#test 
+#test
 
 print braces("([[]])") # ---> YES
 print braces("[[]])") # ---> NO
