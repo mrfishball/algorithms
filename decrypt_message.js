@@ -1,4 +1,4 @@
-'''
+/*
 Decrypt Message
 
 An infamous gang of cyber criminals named “The Gray Cyber Mob”, which is behind many hacking attacks and drug trafficking, has recently become a target for the FBI.
@@ -31,20 +31,23 @@ Since the function should be used on messages with many words, make sure the fun
 Explain the correctness of your function, and analyze its asymptotic runtime and space complexity.
 
 Note: Most programing languages have built-in methods of converting letters to ASCII values and vica versa. You may search the internet for the appropriate method.
-'''
+*/
 
-def decrypt(word):
-    steps = 1
-    result = []
-    wordLength = len(word)
+function decrypt(word) {
+  var firstStep = 1;
+  var result = "";
 
-    for i in range(0, wordLength):
-        newLetterAscii = ord(word[i])
-        newLetterAscii -= steps
+  for (var i = 0; i < word.length; i++) {
+    var newLetterAscii = word.charCodeAt(i);
+    newLetterAscii -= firstStep;
 
-        while(newLetterAscii < ord("a")):
-            newLetterAscii += 26
+    while (newLetterAscii < "a".charCodeAt(0)) {
+      newLetterAscii += 26;
+    }
 
-        result.append(chr(newLetterAscii))
-        steps += newLetterAscii
-    return "".join(result)
+    result += String.fromCharCode(newLetterAscii);
+    firstStep += newLetterAscii;
+  }
+
+  return result;
+}
